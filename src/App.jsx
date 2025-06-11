@@ -117,11 +117,3 @@ Timezone: location?.location?.timezone ? `UTC ${location.location.timezone}` : '
 };
 
 export default App;
-    // justify-content: center;
-    // align-items: center;
-    // flex-direction: column;
-    // height: 400px;
-    // top: 56%;
-    // width: 481px;
-    // gap: 10px;
-    // padding: 10px 15px;
