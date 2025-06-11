@@ -26,7 +26,7 @@ const ChangeMapCenter = ({ center }) => {
 
 const LeafletMap = ({ center = [34.505, -0.03] }) => {
   return (
-    <MapContainer center={center} zoom={13} style={{ height: '500px', width: '100%' }}>
+    <MapContainer center={center} zoom={13}  className='h-[100vh] w-full'>
       <TileLayer
         attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

@@ -11,7 +11,7 @@ const App = () => {
   });
 
   // Get needed data and actions from your Zustand store
-  const { location, ipAddress, setIpAddress, fetchLocation , coordinates} = uselocationInfo();
+  const { location, setIpAddress, fetchLocation , coordinates} = uselocationInfo();
 
   // Local state to handle input and errors
   const [ipvalue, setipvalue] = useState('');
@@ -74,7 +74,7 @@ Timezone: location?.location?.timezone ? `UTC ${location.location.timezone}` : '
         onSubmit={handleSubmit}
         className="flex justify-center items-center flex-col mb-21"
       >
-        <div className="flex flex-row justify-center items-center">
+        <div className="flex flex-row justify-center items-center md:w-auto w-[410px]">
           <input
             type="text"
             name="Ip"
@@ -96,12 +96,14 @@ Timezone: location?.location?.timezone ? `UTC ${location.location.timezone}` : '
         {error && <p className="text-red-500 mt-2">{error}</p>}
       </form>
 
-      <ul className="flex gap-6 bg-white w-[935px] justify-around items-center h-[130px] z-1000 absolute top-[39%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 py-6 px-7 rounded-2xl"
+        <ul className="flex md:gap-6 bg-white md:w-[800px] lg:w-[935px] md:justify-around items-center md:h-[130px] z-1000 absolute md:top-[39%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:py-6 md:px-7 rounded-2xl justify-center md:flex-row flex-col h-[400px] sm:top-[56%] sm:w-[481px] w-[92%] top-[40%] gap-2.5 py-2.5 px-3.5"
+    //           top: 40%;
+    // width: 92%;
       style={{ boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px' }}
       >
         {Object.entries(location_info).map(([key, value]) => (
-          <li key={key} className=' basis-[25%] rightborder flex justify-center flex-col gap-1.5'>
-            <span className='block text-[10px] uppercase text-[#969696] font-bold'>{key}</span>
+          <li key={key} className=' basis-[25%] rightborder flex justify-center flex-col gap-1.5 pr-2.5'>
+            <span className='block text-[10px] uppercase text-[#969696] font-bold text-center md:text-left'>{key}</span>
             <span className='block font-bold text-2xl mb-2.5'>{value}</span>
           </li>
         ))}
@@ -115,3 +117,11 @@ Timezone: location?.location?.timezone ? `UTC ${location.location.timezone}` : '
 };
 
 export default App;
+    // justify-content: center;
+    // align-items: center;
+    // flex-direction: column;
+    // height: 400px;
+    // top: 56%;
+    // width: 481px;
+    // gap: 10px;
+    // padding: 10px 15px;
